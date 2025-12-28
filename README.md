@@ -1,4 +1,4 @@
-🛡️ Phishing Website Detection System
+##🛡️ Phishing Website Detection System
 
 A hybrid **Machine Learning + Rule-Based** web application that detects whether a website URL is **Legitimate**, **Suspicious**, or **Phishing**. Built using **Python, Flask, and XGBoost** following a complete industry-standard ML pipeline.
 
@@ -22,9 +22,9 @@ A hybrid **Machine Learning + Rule-Based** web application that detects whether 
 - HTML, CSS
 
 ## Future Scope
-• WHOIS domain age integration
-• Web traffic analysis APIs
-• Deep learning based phishing de
+- WHOIS domain age integration
+- Web traffic analysis APIs
+- Deep learning based phishing de
 
 ## ▶️ How to Run the Project
 
