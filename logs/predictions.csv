@@ -1,0 +1,11 @@
+time,url,result,confidence
+2025-12-28 19:17:46.311432,https://www.paytm.bank.in Start your Digital Savings Acco,Phishing,8% Safe
+2025-12-28 19:18:18.306404,https://www.paytm.bank.in,Suspicious,37% Safe
+2025-12-28 19:59:56.448658,http://login-update-bank.com,Phishing,High Risk
+2025-12-28 20:03:25.028012,http://netflix-billing-update.click,Phishing,High Risk
+2025-12-28 20:03:59.517553,https://micros0ft-support-login.com,Suspicious,53% Safe
+2025-12-28 20:04:10.104836,https://amaz0n-verify-account.net,Suspicious,52% Safe
+2025-12-28 20:04:39.699025,https://secure-facebook-login.tk,Phishing,High Risk
+2025-12-28 20:05:39.886047,https://developers.google.com/machine-learning/crash-course,Legitimate,87% Safe
+2025-12-28 20:06:25.545118,https://www.amazon.in/ap/signin?openid.return_to=https://www.amazon.in/,Suspicious,Suspicious
+2025-12-28 20:06:45.111705,https://github.com/features/actions?query=machine+learning,Legitimate,83% Safe

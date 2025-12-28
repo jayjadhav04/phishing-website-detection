@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prediction Result</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f0f4f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.result-text{
+    font-size:28px;
+    font-weight:700;
+    margin:15px 0;
+}
+
+.legit{color:#22c55e;}
+.suspicious{color:#f59e0b;}
+.phishing{color:#ef4444;}
+
+.url-box{
+    background:#f3f4f6;
+    padding:10px;
+    border-radius:6px;
+    word-break:break-all;
+    margin:15px 0;
+}
+
+.progress-container{
+    background:#e5e7eb;
+    border-radius:8px;
+    overflow:hidden;
+    height:16px;
+    margin:10px 0 20px 0;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    transition:width 0.5s ease;
+}
+
+.green{background:#22c55e;}
+.orange{background:#f59e0b;}
+.red{background:#ef4444;}
+
+.button{
+    display:inline-block;
+    margin-top:20px;
+    background:#3b82f6;
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.footer{
+    margin-top:30px;
+    font-size:14px;
+    color:#9ca3af;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h3>The URL:</h3>
+<div class="url-box">{{ url }}</div>
+
+{% if result == "Legitimate" %}
+    <div class="result-text legit">Legitimate ✅</div>
+{% elif result == "Suspicious" %}
+    <div class="result-text suspicious">Suspicious ⚠️</div>
+{% else %}
+    <div class="result-text phishing">Phishing ❌</div>
+{% endif %}
+
+<p><strong>{{ confidence }}</strong></p>
+
+<div class="progress-container">
+    <div class="progress-bar
+        {% if safe_percent >= 70 %}green
+        {% elif safe_percent >= 40 %}orange
+        {% else %}red{% endif %}"
+        style="width: {{ safe_percent }}%;">
+    </div>
+</div>
+
+<a href="/" class="button">Check Another URL</a>
+
+<div class="footer">Made by Jay Jadhav</div>
+
+</div>
+</body>
+</html>

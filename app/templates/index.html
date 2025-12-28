@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detector</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .header-icon {
+            background-color: #eef5ff;
+            color: #3b82f6;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .header-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        h2 {
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        button[type="submit"] {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .loader {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #FFF;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Footer Style */
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 14px;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" />
+            </svg>
+        </div>
+        <h2>Phishing Website Detector</h2>
+        <p>Enter a URL to check if it's a malicious site.</p>
+        <form id="phishing-form" action="/predict" method="post">
+            <div class="input-group">
+                <span class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.485 2.146a.5.5 0 0 1 0 .708l-3.85 3.85a1 1 0 0 1-1.415 0l-3.85-3.85a.5.5 0 0 1 .708-.708L9 5.293l3.485-3.147a.5.5 0 0 1 .708 0zM9 13.793l-3.485-3.147a.5.5 0 0 1 .708-.708L9 12.293l3.485-3.147a.5.5 0 0 1 .708.708L9 13.793z"/>
+                    </svg>
+                </span>
+                <input type="text" name="url" placeholder="example.com" required autocomplete="off">
+            </div>
+            <button type="submit" id="submit-button">
+                <span>Check URL</span>
+            </button>
+        </form>
+        
+        <!-- === ADDED THIS FOOTER === -->
+        <div class="footer">
+            Made by Jay Jadhav
+        </div>
+        <!-- ======================= -->
+    </div>
+
+    <script>
+        document.getElementById('phishing-form').addEventListener('submit', function() {
+            const button = document.getElementById('submit-button');
+            button.innerHTML = '<span>Analyzing...</span><div class="loader"></div>';
+            button.disabled = true;
+        });
+    </script>
+</body>
+</html>
+
