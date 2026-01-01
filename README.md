@@ -104,20 +104,6 @@ A Flask-based web interface enables:
 
 ---
 
-## 📂 Project Structure
-phishing-website-detection/
-│
-├── app/ # Flask web application
-│ └── app.py
-├── models/ # Trained ML models
-├── logs/ # Prediction logs
-├── images/ # Application screenshots
-├── notebooks/ # EDA & experimentation
-├── requirements.txt # Project dependencies
-├── README.md # Documentation
-
----
-
 ## ▶️ How to Run the Project
 1. Clone the repository:
 git clone https://github.com/jayjadhav04/phishing-website-detection.git
