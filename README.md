@@ -5,7 +5,8 @@ A hybrid **Machine Learning + Rule-Based** web application that detects whether 
 ## 🚀 Features
 - URL-based phishing detection
 - Hybrid Rule-Based + Machine Learning approach
-- Three-level classification:# 🔐 Phishing Website Detection
+- Three-level classification
+  
 ### Data Science Project (Applied Machine Learning)
 
 An end-to-end **Data Science project with Applied Machine Learning** that detects whether a given website URL is **Legitimate or Phishing**.  
