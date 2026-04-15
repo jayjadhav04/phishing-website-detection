@@ -36,6 +36,26 @@ And returns a **confidence score** for better interpretability.
 
 ---
 
+## 🖥️ User Interface
+
+### 🏠 Home Page
+
+![Home](images/ui.png)
+
+---
+
+### 🔍 Legitimate Website Detection
+
+![Legitimate](images/legitimate_detect_1.png)
+
+---
+
+### 🔍 Phishing Website Detection
+
+![Phishing](images/phishing_detect_1.png)
+
+---
+
 ## 🧠 Data Science & Machine Learning Approach
 - **Domain:** Cybersecurity
 - **Learning Type:** Supervised Classification
