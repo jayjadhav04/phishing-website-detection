@@ -8,10 +8,14 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Load model & scaler
-model = joblib.load("../models/final_phishing_model.pkl")
-scaler = joblib.load("../models/scaler.pkl")
+import os
 
-LOG_FILE = "../logs/predictions.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(BASE_DIR, "../models/final_phishing_model.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "../models/scaler.pkl"))
+
+LOG_FILE = os.path.join(BASE_DIR, "../logs/predictions.csv")
 
 
 # ---------- FEATURE EXTRACTION ----------
