@@ -94,9 +94,9 @@ Special emphasis was placed on **Phishing Recall**, as false negatives are costl
 | **XGBoost (Final Model)** | **97.03%** | **97.64%** |
 
 ### 🏆 Final Model Performance (XGBoost)
-- **Accuracy:** 96.85%
+- **Accuracy:** 97.03%
 - **Precision:** 95.89%
-- **Recall:** 97.90%
+- **Recall:** 97.64%
 - **F1-Score:** 96.88%
 
 XGBoost was selected as the final model due to its superior performance and high recall, ensuring effective phishing detection while minimizing false negatives.
